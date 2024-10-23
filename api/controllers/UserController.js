@@ -1,5 +1,5 @@
 module.exports = {
-  find: async function(req, res) {
+  find: async function (req, res) {
     try {
       const users = await User.find();
       return res.json(users);
@@ -8,7 +8,7 @@ module.exports = {
     }
   },
 
-  findOne: async function(req, res) {
+  findOne: async function (req, res) {
     try {
       const user = await User.findOne({ id: req.params.id });
       if (!user) return res.notFound();
@@ -18,7 +18,7 @@ module.exports = {
     }
   },
 
-  create: async function(req, res) {
+  create: async function (req, res) {
     try {
       const user = await User.create(req.body).fetch();
       return res.json(user);
@@ -27,7 +27,7 @@ module.exports = {
     }
   },
 
-  update: async function(req, res) {
+  update: async function (req, res) {
     try {
       const user = await User.updateOne({ id: req.params.id }).set(req.body);
       if (!user) return res.notFound();
@@ -37,7 +37,7 @@ module.exports = {
     }
   },
 
-  destroy: async function(req, res) {
+  destroy: async function (req, res) {
     try {
       const user = await User.destroyOne({ id: req.params.id });
       if (!user) return res.notFound();

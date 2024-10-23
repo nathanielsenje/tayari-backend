@@ -14,12 +14,11 @@
  */
 
 module.exports.models = {
-  datastore: 'default',
-  migrate: 'alter',
-  primaryKey: 'id',
+  migrate: 'alter', // or 'safe' in production
   attributes: {
     createdAt: { type: 'number', autoCreatedAt: true },
     updatedAt: { type: 'number', autoUpdatedAt: true },
-    id: { type: 'number', autoIncrement: true },
+    id: { type: 'number', autoIncrement: true }, // or use 'string' with uuidv4
   },
+  datastore: 'default',
 };

@@ -1,15 +1,11 @@
 module.exports = {
   attributes: {
-    username: { type: 'string', required: true, unique: true },
-    email: { type: 'string', required: true, unique: true },
+    name: { type: 'string', required: true },
+    email: { type: 'string', required: true, unique: true, isEmail: true },
     password: { type: 'string', required: true },
-    fullName: { type: 'string' },
-    createdAt: { type: 'number', autoCreatedAt: true },
-    updatedAt: { type: 'number', autoUpdatedAt: true },
-    isActive: { type: 'boolean', defaultsTo: true },
-    appointments: {
-      collection: 'appointment',
-      via: 'user'
-    }
+    joinDate: { type: 'ref', columnType: 'date' },
+    bio: { type: 'string' },
+    avatarUrl: { type: 'string' }
   },
+  tableName: 'users'  // Add this line
 };

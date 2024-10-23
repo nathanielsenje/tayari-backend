@@ -1,22 +1,17 @@
 module.exports = {
   attributes: {
-    name: { type: 'string', required: true },
+    name: { type: 'string' },
     specialization: { type: 'string' },
-    email: { type: 'string', required: true, unique: true },
-    appointments: {
-      collection: 'appointment',
-      via: 'doctor'
-    },
-    createdAt: { type: 'number', autoCreatedAt: true },
-    updatedAt: { type: 'number', autoUpdatedAt: true },
-    is_active: {
-      type: 'boolean',
-      defaultsTo: true  // Set to true by default, adjust if needed
-    },
-    description: {
-      type: 'string',
-      columnType: 'text',
-      allowNull: true
-    }
-  },
+    description: { type: 'string' },
+    image_url: { type: 'string' },
+    rating: { type: 'number' },
+    reviews: { type: 'number' },
+    availability: { type: 'string' },
+    education: { type: 'string' },
+    experience: { type: 'string' },
+    location: { type: 'string' },
+    phone: { type: 'string' },
+    email: { type: 'string', required: true, isEmail: true },
+    working_hours: { type: 'string' },
+  }
 };

@@ -1,8 +1,8 @@
 module.exports = {
     find: async function (req, res) {
         try {
-            const doctors = await Doctor.find();
-            return res.json(doctors);
+            const clients = await Client.find();
+            return res.json(clients);
         } catch (err) {
             return res.serverError(err);
         }
@@ -10,9 +10,9 @@ module.exports = {
 
     findOne: async function (req, res) {
         try {
-            const doctor = await Doctor.findOne({ id: req.params.id });
-            if (!doctor) return res.notFound();
-            return res.json(doctor);
+            const client = await Client.findOne({ id: req.params.id });
+            if (!client) return res.notFound();
+            return res.json(client);
         } catch (err) {
             return res.serverError(err);
         }
@@ -20,8 +20,8 @@ module.exports = {
 
     create: async function (req, res) {
         try {
-            const doctor = await Doctor.create(req.body).fetch();
-            return res.json(doctor);
+            const client = await Client.create(req.body).fetch();
+            return res.json(client);
         } catch (err) {
             return res.serverError(err);
         }
@@ -29,9 +29,9 @@ module.exports = {
 
     update: async function (req, res) {
         try {
-            const doctor = await Doctor.updateOne({ id: req.params.id }).set(req.body);
-            if (!doctor) return res.notFound();
-            return res.json(doctor);
+            const client = await Client.updateOne({ id: req.params.id }).set(req.body);
+            if (!client) return res.notFound();
+            return res.json(client);
         } catch (err) {
             return res.serverError(err);
         }
@@ -39,8 +39,8 @@ module.exports = {
 
     destroy: async function (req, res) {
         try {
-            const doctor = await Doctor.destroyOne({ id: req.params.id });
-            if (!doctor) return res.notFound();
+            const client = await Client.destroyOne({ id: req.params.id });
+            if (!client) return res.notFound();
             return res.ok();
         } catch (err) {
             return res.serverError(err);

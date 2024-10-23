@@ -33,12 +33,12 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  // User routes
-  'GET /api/users': 'UserController.find',
-  'GET /api/users/:id': 'UserController.findOne',
-  'POST /api/users': 'UserController.create',
-  'PUT /api/users/:id': 'UserController.update',
-  'DELETE /api/users/:id': 'UserController.destroy',
+  // Client routes (previously User routes)
+  'GET /api/v1/clients': 'ClientController.find',
+  'GET /api/v1/clients/:id': 'ClientController.findOne',
+  'POST /api/v1/clients': 'ClientController.create',
+  'PUT /api/v1/clients/:id': 'ClientController.update',
+  'DELETE /api/v1/clients/:id': 'ClientController.destroy',
 
   // Appointment routes
   'GET /api/appointments': 'AppointmentController.find',
@@ -55,10 +55,37 @@ module.exports.routes = {
   'DELETE /api/forums/:id': 'ForumController.destroy',
 
   // Doctor routes
-  'GET /api/doctors': 'DoctorController.find',
-  'GET /api/doctors/:id': 'DoctorController.findOne',
-  'POST /api/doctors': 'DoctorController.create',
-  'PUT /api/doctors/:id': 'DoctorController.update',
-  'DELETE /api/doctors/:id': 'DoctorController.destroy',
-  'GET /api/doctors/:id/appointments': 'DoctorController.findAppointments',
+  'GET /api/v1/doctors': 'DoctorController.find',
+  'GET /api/v1/doctors/:id': 'DoctorController.findOne',
+  'POST /api/v1/doctors': 'DoctorController.create',
+  'PUT /api/v1/doctors/:id': 'DoctorController.update',
+  'DELETE /api/v1/doctors/:id': 'DoctorController.destroy',
+
+  // Booking routes
+  'GET /api/v1/bookings': 'BookingController.find',
+  'GET /api/v1/bookings/:id': 'BookingController.findOne',
+  'POST /api/v1/bookings': 'BookingController.create',
+  'PUT /api/v1/bookings/:id': 'BookingController.update',
+  'DELETE /api/v1/bookings/:id': 'BookingController.destroy',
+
+  // Forum post routes
+  'GET /api/v1/forum-posts': 'ForumPostController.find',
+  'GET /api/v1/forum-posts/:id': 'ForumPostController.findOne',
+  'POST /api/v1/forum-posts': 'ForumPostController.create',
+  'PUT /api/v1/forum-posts/:id': 'ForumPostController.update',
+  'DELETE /api/v1/forum-posts/:id': 'ForumPostController.destroy',
+
+  // Forum reply routes
+  'GET /api/v1/forum-replies': 'ForumReplyController.find',
+  'GET /api/v1/forum-replies/:id': 'ForumReplyController.findOne',
+  'POST /api/v1/forum-replies': 'ForumReplyController.create',
+  'PUT /api/v1/forum-replies/:id': 'ForumReplyController.update',
+  'DELETE /api/v1/forum-replies/:id': 'ForumReplyController.destroy',
+
+  // Article routes
+  'GET /api/v1/articles': 'ArticleController.find',
+  'GET /api/v1/articles/:id': 'ArticleController.findOne',
+  'POST /api/v1/articles': 'ArticleController.create',
+  'PUT /api/v1/articles/:id': 'ArticleController.update',
+  'DELETE /api/v1/articles/:id': 'ArticleController.destroy',
 };

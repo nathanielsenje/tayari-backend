@@ -15,8 +15,10 @@
 
 module.exports.datastores = {
   default: {
-    adapter: 'sails-mysql',
-    url: 'mysql://sql5739643:IPjYZ9ZtmH@sql5.freemysqlhosting.net/sql5739643'
-
-  }
+    adapter: 'sails-postgresql',
+    url: 'postgresql://admin:9Uelc1h3USBAa5aHbbXPabHr3UnEimGR@dpg-csccr70gph6c73br05sg-a.oregon-postgres.render.com/hidoc',
+    ssl: {
+      rejectUnauthorized: false
+    }
+  },
 };

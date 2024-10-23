@@ -22,6 +22,8 @@
 
 require('dotenv').config();
 
+
+
 // Ensure we're in the project directory, so cwd-relative paths work as expected
 // no matter where we actually lift from.
 // > Note: This is not required in order to lift, but it is a convenient default.
@@ -49,4 +51,27 @@ try {
 }//-•
 
 // Start server
-sails.lift(rc('sails'));
+sails.lift({
+  hooks: {
+    orm: false
+  }
+}, (err) => {
+  if (err) {
+    console.error('Failed to lift Sails app:', err);
+    return;
+  }
+
+  console.log('Sails app lifted successfully');
+});
+
+process.on('SIGINT', () => {
+  sails.lower((err) => {
+    if (err) {
+      console.error('Error occurred lowering Sails app:', err);
+      return process.exit(1);
+    }
+
+    console.log('Sails app lowered successfully');
+    process.exit(0);
+  });
+});
