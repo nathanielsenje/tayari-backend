@@ -1,26 +1,83 @@
-# tayari-backend
+# Tayari Backend
 
-a [Sails v1](https://sailsjs.com) application
+Tayari Backend is a Sails.js application that provides the server-side functionality for the Tayari platform, a healthcare appointment booking and management system.
 
+## Technical Specifications
 
-### Links
+- **Framework**: Sails.js
+- **Database**: PostgreSQL
+- **ORM**: Waterline (built into Sails.js)
+- **Authentication**: [To be implemented]
+- **API**: RESTful
 
-+ [Sails framework documentation](https://sailsjs.com/get-started)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+## Features
 
+- Doctor management
+- Client management
+- Appointment booking
+- Forum functionality
+- Article management
 
-### Version info
+## Installation Instructions
 
-This app was originally generated on Mon Oct 21 2024 18:47:50 GMT+0300 (East Africa Time) using Sails v1.5.12.
+1. Clone the repository:   ```
+   git clone [repository-url]
+   cd tayari-backend   ```
 
-<!-- Internally, Sails used [`sails-generate@2.0.12`](https://github.com/balderdashy/sails-generate/tree/v2.0.12/lib/core-generators/new). -->
+2. Install dependencies:   ```
+   npm install   ```
 
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add the following:   ```
+   DATABASE_URL=postgresql://admin:9Uelc1h3USBAa5aHbbXPabHr3UnEimGR@dpg-csccr70gph6c73br05sg-a.oregon-postgres.render.com/hidoc   ```
 
+4. Start the server:   ```
+   npm start   ```
 
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
+## API Endpoints
 
+- **Clients**
+  - GET /api/v1/clients
+  - GET /api/v1/clients/:id
+  - POST /api/v1/clients
+  - PUT /api/v1/clients/:id
+  - DELETE /api/v1/clients/:id
+
+- **Doctors**
+  - GET /api/v1/doctors
+  - GET /api/v1/doctors/:id
+  - POST /api/v1/doctors
+  - PUT /api/v1/doctors/:id
+  - DELETE /api/v1/doctors/:id
+
+- **Bookings**
+  - GET /api/v1/bookings
+  - GET /api/v1/bookings/:id
+  - POST /api/v1/bookings
+  - PUT /api/v1/bookings/:id
+  - DELETE /api/v1/bookings/:id
+
+- **Forum Posts**
+  - GET /api/v1/forum-posts
+  - GET /api/v1/forum-posts/:id
+  - POST /api/v1/forum-posts
+  - PUT /api/v1/forum-posts/:id
+  - DELETE /api/v1/forum-posts/:id
+
+- **Forum Replies**
+  - GET /api/v1/forum-replies
+  - GET /api/v1/forum-replies/:id
+  - POST /api/v1/forum-replies
+  - PUT /api/v1/forum-replies/:id
+  - DELETE /api/v1/forum-replies/:id
+
+- **Articles**
+  - GET /api/v1/articles
+  - GET /api/v1/articles/:id
+  - POST /api/v1/articles
+  - PUT /api/v1/articles/:id
+  - DELETE /api/v1/articles/:id
+
+## Development
+
+To run the application in development mode with auto-reloading:
