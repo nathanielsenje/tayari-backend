@@ -1,0 +1,21 @@
+{
+  "name": "Sails.js Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "forwardPorts": [1337],
+  "postCreateCommand": "npm install -g sails && npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vsliveshare.vsliveshare",
+        "GitHub.copilot"
+      ]
+    }
+  },
+  "remoteUser": "node"
+}
